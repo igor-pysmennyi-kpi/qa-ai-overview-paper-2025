@@ -83,3 +83,12 @@ Here’s a structured approach to the test case for the checkout process based o
 - Document any issues encountered during testing and retest once resolved.
 
 Total tokens used: 1027
+
+
+Verification:
+Executable cases: 4
+Not executable cases: 0
+Covered AC: 4/4
+According to format: -
+Exploratory: -
+Comment: 

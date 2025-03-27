@@ -36,3 +36,12 @@ Verify user can add an item directly from the inventory page to the shopping car
 - Test behavior on different browsers and devices to ensure consistent user experience.
 
 Total tokens used: 664
+
+
+Verification:
+Executable cases: 1
+Not executable cases: 0
+Covered AC: 3/3
+According to format: +-
+Exploratory: +-
+Comment: extra elements in format; multiple ac merged into single TC

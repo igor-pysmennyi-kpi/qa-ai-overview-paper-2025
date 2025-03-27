@@ -46,3 +46,13 @@ For each scenario, perform the following steps:
 By following these test scenarios and steps, you can verify that the feature functions according to the specified acceptance criteria and provides a seamless shopping experience for the user.
 
 Total tokens used: 817
+
+
+
+Verification:
+Executable cases: 3
+Not executable cases: 0
+Covered AC: 3/3
+According to format: +-
+Exploratory: -
+Comment: extra elements in format; multiple tc merged into single flow

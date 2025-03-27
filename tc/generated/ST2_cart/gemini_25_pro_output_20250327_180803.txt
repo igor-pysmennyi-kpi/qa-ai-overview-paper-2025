@@ -85,3 +85,12 @@ Okay, here are test cases based on the user story ST_CART and its acceptance cri
 ---
 
 Total tokens used: 1249
+
+
+Verification:
+Executable cases: 4
+Not executable cases: 0
+Covered AC: 3/3
+According to format: +
+Exploratory: +-
+Comment: redundant overlapping cases. on case cover multiple ac

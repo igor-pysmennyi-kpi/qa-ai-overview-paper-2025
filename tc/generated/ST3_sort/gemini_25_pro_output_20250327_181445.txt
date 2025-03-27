@@ -64,3 +64,13 @@ Here's how you could structure it slightly better by separating the test data:
 Overall, your original story was good and functional. The main suggestion is just to keep test data separate for better organization and focus within the story itself.
 
 Total tokens used: 1169
+
+
+
+Verification:
+Executable cases: 1
+Not executable cases: 0
+Covered AC: 3/3
+According to format: +-
+Exploratory: -
+Comment:  mixed steps and expected results

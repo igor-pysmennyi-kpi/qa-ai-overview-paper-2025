@@ -45,3 +45,12 @@ Okay, here is a test case designed to verify the user story "ST_PREVIEW" based o
 ---
 
 Total tokens used: 1012
+
+
+Verification:
+Executable cases: 1
+Not executable cases: 0
+Covered AC: 2/2
+According to format: +
+Exploratory: +
+Comment: compbined 2 ac in 1 TC

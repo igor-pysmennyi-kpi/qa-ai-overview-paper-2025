@@ -104,3 +104,10 @@ driver.quit()
 This script will help you automate the login tests and verify that the system behaves as expected for both correct and incorrect login credentials.
 
 Total tokens used: 894
+
+Verification:
+Executable cases: 2
+Not executable cases: 0
+Covered AC: 2/2
+According to format: -
+Exploratory: -
