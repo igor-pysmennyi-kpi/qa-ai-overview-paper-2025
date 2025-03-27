@@ -1,0 +1,65 @@
+To test the functionality of adding an item to the shopping cart directly from the product list, you can follow these steps:
+
+### Test Steps:
+
+1. **Login to the Application:**
+   - Navigate to the login page.
+   - Enter `username: standard_user` and `password: secret_sauce`.
+   - Click on the "Login" button.
+
+2. **Verify Product List Page:**
+   - Ensure you are on the inventory page (`/inventory.html`).
+   - Check that the product list is displayed with each product item having a visible "Add to cart" button.
+
+3. **Add an Item to the Cart:**
+   - Click on the "Add to cart" button for any product item.
+   - Verify that the item is added to the shopping cart.
+   - Check that the shopping cart icon in the header updates to display a badge indicating the total number of items currently in the cart (e.g., shows '1' after adding the first item).
+
+4. **Verify Cart Icon:**
+   - Click on the cart icon in the header.
+   - Verify that the selected item is displayed in the cart.
+
+### Acceptance Criteria:
+
+1. **AC1: Product has a visible "Add to cart" button.**
+   - **Test Steps:**
+     - Inspect each product item on the inventory page.
+     - Ensure there is a visible "Add to cart" button for each product.
+   - **Expected Result:**
+     - Each product item should have a visible "Add to cart" button.
+
+2. **AC2: Single item is added to the shopping cart and the cart icon updates.**
+   - **Test Steps:**
+     - Click the "Add to cart" button for a specific product.
+     - Check the shopping cart icon in the header.
+   - **Expected Result:**
+     - The item should be added to the shopping cart.
+     - The shopping cart icon should update to display a badge indicating the total number of items (e.g., '1' after adding the first item).
+
+3. **AC3: User can see the selected item in the cart.**
+   - **Test Steps:**
+     - Click the cart icon in the header.
+     - Verify the contents of the cart.
+   - **Expected Result:**
+     - The selected item should be visible in the cart.
+
+### Example Test Script:
+
+```plaintext
+1. Open the application in a web browser.
+2. Navigate to the login page.
+3. Enter the username "standard_user" and password "secret_sauce".
+4. Click the "Login" button.
+5. Verify that you are on the inventory page.
+6. Inspect each product item to ensure there is a visible "Add to cart" button.
+7. Click the "Add to cart" button for a specific product.
+8. Verify that the item is added to the shopping cart.
+9. Check that the shopping cart icon in the header updates to show '1'.
+10. Click the cart icon in the header.
+11. Verify that the selected item is displayed in the cart.
+```
+
+By following these steps and verifying the acceptance criteria, you can ensure that the functionality of adding items to the shopping cart directly from the product list is working as expected.
+
+Total tokens used: 865

@@ -1,0 +1,88 @@
+### Test Case: Product Preview Picture in Product List
+
+**ID:** ST_PREVIEW
+
+**Title:** As a user I want to see a preview picture on the product list to be able to select a product
+
+**Test Data:**
+- Username: standard_user
+- Password: secret_sauce
+
+**Preconditions:**
+- User is logged in with the provided username and password.
+
+**Acceptance Criteria:**
+1. **AC1:** Each product in the product list has a distinctive product picture.
+2. **AC2:** Given a product in the list, when the user clicks on this product, the same picture as on the preview is shown.
+
+### Test Steps:
+
+1. **Login:**
+   - Navigate to the login page.
+   - Enter the username `standard_user`.
+   - Enter the password `secret_sauce`.
+   - Click on the "Login" button.
+
+2. **Verify Product List:**
+   - Ensure that the product list is displayed.
+   - Check that each product in the list has a distinctive product picture.
+
+3. **Select a Product:**
+   - Click on a product in the list to view its details.
+
+4. **Verify Product Preview:**
+   - Check that the product details page displays the same product picture as shown in the product list.
+
+### Expected Results:
+
+1. **AC1 Verification:**
+   - Each product in the product list should have a unique and distinct product picture.
+
+2. **AC2 Verification:**
+   - When a product is clicked, the product details page should display the same product picture that was shown in the product list.
+
+### Test Case ID: ST_PREVIEW_AC1
+
+**Title:** Verify that each product in the product list has a distinctive product picture.
+
+**Steps:**
+1. Log in with the provided credentials.
+2. Navigate to the product list page.
+3. Observe each product in the list to ensure it has a unique product picture.
+
+**Expected Result:**
+- Each product in the product list should have a unique and distinct product picture.
+
+### Test Case ID: ST_PREVIEW_AC2
+
+**Title:** Verify that the product picture shown in the product details matches the one in the product list.
+
+**Steps:**
+1. Log in with the provided credentials.
+2. Navigate to the product list page.
+3. Click on a product in the list to view its details.
+4. Observe the product details page to ensure the product picture matches the one shown in the product list.
+
+**Expected Result:**
+- The product picture displayed on the product details page should match the product picture shown in the product list.
+
+### Test Case Execution:
+
+1. **Login:**
+   - Navigate to the login page.
+   - Enter the username `standard_user`.
+   - Enter the password `secret_sauce`.
+   - Click on the "Login" button.
+
+2. **Verify Product List (ST_PREVIEW_AC1):**
+   - Check each product in the list for a unique and distinct product picture.
+
+3. **Select a Product and Verify Preview (ST_PREVIEW_AC2):**
+   - Click on a product in the list.
+   - Verify that the product details page displays the same product picture as shown in the product list.
+
+### Conclusion:
+
+By following these test steps and verifying the acceptance criteria, we can ensure that the product preview picture functionality is working correctly, allowing users to easily select products from the list.
+
+Total tokens used: 788

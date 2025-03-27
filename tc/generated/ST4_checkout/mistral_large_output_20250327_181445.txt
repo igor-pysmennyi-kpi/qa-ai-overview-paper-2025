@@ -1,0 +1,71 @@
+Sure, let's break down the steps and expected outcomes for the checkout process based on the provided details. Here is a structured test plan for the user story "ST_CHECKOUT":
+
+### Test Plan for User Story: ST_CHECKOUT
+
+#### Preconditions:
+1. User is logged in with the following credentials:
+   - Username: standard_user
+   - Password: secret_sauce
+2. User has at least one item added to the shopping cart.
+3. User is on the shopping cart page (/cart.html).
+
+#### Test Data:
+- First Name: Jane
+- Last Name: Doe
+- Postal Code: 12345
+
+#### Acceptance Criteria:
+
+1. **AC1: Navigate to 'Checkout: Your Information' Page**
+   - **Given**: Product in cart
+   - **When**: User clicks on "Checkout" button
+   - **Then**: User is navigated to the 'Checkout: Your Information' page (/checkout-step-one.html)
+   - **Test Steps**:
+     1. Verify that the user is on the shopping cart page (/cart.html).
+     2. Click on the "Checkout" button.
+     3. Verify that the user is redirected to the 'Checkout: Your Information' page (/checkout-step-one.html).
+
+2. **AC2: Navigate to 'Checkout: Overview' Page and Verify Details**
+   - **Given**: User input First Name, Last Name, and Postal Code into the respective fields
+   - **When**: User clicks "Continue"
+   - **Then**: User navigates to the 'Checkout: Overview' page (/checkout-step-two.html)
+   - **And**: The 'Checkout: Overview' page correctly displays the item(s) from the cart, Item total (subtotal), Tax, and Total price
+   - **Test Steps**:
+     1. On the 'Checkout: Your Information' page, input the First Name: Jane, Last Name: Doe, and Postal Code: 12345.
+     2. Click on the "Continue" button.
+     3. Verify that the user is redirected to the 'Checkout: Overview' page (/checkout-step-two.html).
+     4. Verify that the 'Checkout: Overview' page correctly displays the item(s) from the cart, Item total (subtotal), Tax, and Total price.
+
+3. **AC3: Complete Checkout and Display Success Message**
+   - **When**: User clicks 'Finish' on the 'Checkout: Overview'
+   - **Then**: User navigates to the 'Checkout: Complete!' page (/checkout-complete.html)
+   - **And**: The 'Checkout: Complete!' page displays a success message (e.g., "THANK YOU FOR YOUR ORDER")
+   - **Test Steps**:
+     1. On the 'Checkout: Overview' page, click on the 'Finish' button.
+     2. Verify that the user is redirected to the 'Checkout: Complete!' page (/checkout-complete.html).
+     3. Verify that the 'Checkout: Complete!' page displays a success message (e.g., "THANK YOU FOR YOUR ORDER").
+
+4. **AC4: Redirect to Product List Page and Verify Empty Cart**
+   - **Given**: User stays on "Checkout: Complete!" page
+   - **When**: User clicks "Back home" button
+   - **Then**: User is redirected to product list page
+   - **And**: The shopping cart is empty after successfully completing the order
+   - **Test Steps**:
+     1. On the 'Checkout: Complete!' page, click on the "Back home" button.
+     2. Verify that the user is redirected to the product list page.
+     3. Verify that the shopping cart is empty.
+
+### Expected Outcomes:
+1. User successfully navigates through each step of the checkout process.
+2. All information is correctly displayed and processed.
+3. The user receives a confirmation message upon completion.
+4. The shopping cart is empty after the order is completed.
+
+### Notes:
+- Ensure that all inputs are correctly formatted and validated.
+- Verify that all navigation links and buttons function correctly.
+- Ensure that the cart empties only after the order is confirmed.
+
+By following these steps, you can ensure that the checkout process meets the specified acceptance criteria and provides a smooth user experience.
+
+Total tokens used: 1406

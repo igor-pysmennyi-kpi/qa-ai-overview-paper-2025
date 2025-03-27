@@ -1,0 +1,97 @@
+### Test Case: Add Item to Shopping Cart Directly from Product List
+
+#### Test ID:
+ST_CART
+
+#### Title:
+As a user, I want to add an item to my shopping cart directly from the product list so that I can collect items I intend to purchase.
+
+#### Test Data:
+- Username: standard_user
+- Password: secret_sauce
+
+#### Preconditions:
+- The user is logged in with the provided username and password.
+- The user is on the inventory page (/inventory.html).
+
+#### Acceptance Criteria:
+
+1. **AC1: Visibility of "Add to Cart" Button**
+   - **Given**: Each product item listed on the inventory page
+   - **Then**: The product has a visible "Add to cart" button.
+
+2. **AC2: Adding Item to Cart**
+   - **When**: The user clicks the "Add to cart" button for a specific product
+   - **Then**: A single item is added to the shopping cart
+   - **And**: The shopping cart icon in the header updates to display a badge indicating the total number of items currently in the cart (e.g., shows '1' after adding the first item).
+
+3. **AC3: Viewing Cart Items**
+   - **Given**: A product is added to the shopping cart
+   - **When**: The user clicks on the cart icon
+   - **Then**: The user can see the selected item.
+
+#### Test Steps:
+
+1. **Login and Navigate to Inventory Page**
+   - Open the browser and navigate to the login page.
+   - Enter the username: `standard_user`
+   - Enter the password: `secret_sauce`
+   - Click the login button.
+   - Verify that the user is redirected to the inventory page (/inventory.html).
+
+2. **Verify "Add to Cart" Button Visibility (AC1)**
+   - Check that each product item on the inventory page has a visible "Add to cart" button.
+   - Assert that the "Add to cart" button is present and visible for each product.
+
+3. **Add Item to Cart (AC2)**
+   - Select a product from the inventory list.
+   - Click the "Add to cart" button for the selected product.
+   - Verify that the shopping cart icon in the header updates to display the total number of items in the cart (e.g., shows '1' after adding the first item).
+
+4. **View Cart Items (AC3)**
+   - Click on the shopping cart icon in the header.
+   - Verify that the selected item appears in the shopping cart.
+
+#### Expected Results:
+
+1. **AC1**:
+   - Each product item should have a visible "Add to cart" button.
+
+2. **AC2**:
+   - When the "Add to cart" button is clicked, a single item should be added to the shopping cart.
+   - The shopping cart icon should update to display the total number of items in the cart.
+
+3. **AC3**:
+   - When the user clicks on the shopping cart icon, the selected item should be visible in the cart.
+
+#### Test Execution:
+
+1. **Login and Navigate to Inventory Page**:
+   - Open the browser and navigate to the login page.
+   - Enter the username: `standard_user`
+   - Enter the password: `secret_sauce`
+   - Click the login button.
+   - Verify that the user is redirected to the inventory page (/inventory.html).
+
+2. **Verify "Add to Cart" Button Visibility (AC1)**:
+   - Check that each product item on the inventory page has a visible "Add to cart" button.
+   - Assert that the "Add to cart" button is present and visible for each product.
+
+3. **Add Item to Cart (AC2)**:
+   - Select a product from the inventory list.
+   - Click the "Add to cart" button for the selected product.
+   - Verify that the shopping cart icon in the header updates to display the total number of items in the cart (e.g., shows '1' after adding the first item).
+
+4. **View Cart Items (AC3)**:
+   - Click on the shopping cart icon in the header.
+   - Verify that the selected item appears in the shopping cart.
+
+#### Test Completion:
+- Log out of the application.
+- Close the browser.
+
+#### Notes:
+- Ensure that the application behaves as expected in different browsers and devices if applicable.
+- Record any anomalies or defects observed during the test execution.
+
+Total tokens used: 1263

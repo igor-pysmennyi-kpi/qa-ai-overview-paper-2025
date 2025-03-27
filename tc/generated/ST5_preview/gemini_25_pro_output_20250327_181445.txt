@@ -1,0 +1,47 @@
+Okay, here is a test case designed to verify the user story "ST_PREVIEW" based on the provided information.
+
+---
+
+**Test Case: Verify Product Preview Images on Product List**
+
+**Test Case ID:** TC_ST_PREVIEW_001
+
+**User Story ID:** ST_PREVIEW
+
+**Test Case Title:** Verify Product Preview Images and Consistency on Detail Page
+
+**Test Objective:** To ensure that each product on the product list displays a distinctive preview image and that the same image is shown on the product detail page upon selection.
+
+**Test Data:**
+*   **Username:** `standard_user`
+*   **Password:** `secret_sauce`
+*   **URL:** (Assuming a standard login page URL for the application, e.g., `https://www.saucedemo.com/`)
+
+**Preconditions:**
+1.  The application is accessible via the specified URL.
+2.  The test user (`standard_user` / `secret_sauce`) exists and is active.
+3.  The application has multiple products configured with associated images.
+
+**Test Steps:**
+
+| Step # | Action                                                                                                | Expected Result                                                                                                                                    | Status (Pass/Fail) | Notes / Actual Result |
+| :----- | :---------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------- | :-------------------- |
+| 1      | Navigate to the application login page.                                                               | The login page is displayed with fields for Username and Password.                                                                                   |                    |                       |
+| 2      | Enter the `standard_user` username into the username field.                                           | The username `standard_user` is entered correctly.                                                                                                   |                    |                       |
+| 3      | Enter the `secret_sauce` password into the password field.                                            | The password `secret_sauce` is entered correctly (likely masked).                                                                                    |                    |                       |
+| 4      | Click the "Login" button.                                                                             | The user is successfully logged in and redirected to the Product List/Inventory page.                                                              |                    |                       |
+| 5      | **(Verify AC1)** Observe the product list displayed on the page.                                      | Each product item in the list (e.g., Sauce Labs Backpack, Sauce Labs Bike Light, etc.) displays an image associated with it.                        |                    |                       |
+| 6      | **(Verify AC1)** Visually inspect the images for at least 2-3 different products.                     | The images shown for different products are visually distinct and representative of the product described (e.g., a backpack image for the backpack). |                    |                       |
+| 7      | **(Verify AC2)** Identify a specific product on the list (e.g., "Sauce Labs Backpack"). Note its preview image. | A specific product and its corresponding preview image are identified.                                                                             |                    |                       |
+| 8      | **(Verify AC2)** Click on the name OR the image of the selected product ("Sauce Labs Backpack").        | The application navigates to the Product Detail page for the selected product ("Sauce Labs Backpack").                                               |                    |                       |
+| 9      | **(Verify AC2)** Observe the main product image displayed on the Product Detail page.                 | The main product image displayed on the detail page is visually identical to the preview image noted in Step 7 for "Sauce Labs Backpack".           |                    |                       |
+| 10     | (Optional) Navigate back to the product list page.                                                    | The product list page is displayed correctly.                                                                                                      |                    |                       |
+| 11     | (Optional) Repeat steps 7-9 for a different product (e.g., "Sauce Labs Bike Light").                  | The Product Detail page for the second product is shown, and its main image matches its preview image from the list.                               |                    |                       |
+
+**Postconditions:**
+*   User remains logged in (unless logout is added as a final step).
+*   User is on the Product Detail page (after Step 9/11) or Product List page (after Step 10).
+
+---
+
+Total tokens used: 1012

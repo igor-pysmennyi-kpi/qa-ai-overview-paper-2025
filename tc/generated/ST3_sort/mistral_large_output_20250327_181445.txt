@@ -1,0 +1,82 @@
+Sure, let's go through the steps to ensure that the user can sort products by price on the inventory page. We'll break this down into the acceptance criteria provided.
+
+### Steps to Test Sorting by Price
+
+#### Preconditions:
+1. Ensure the user is logged in with the provided credentials (username: `standard_user`, password: `secret_sauce`).
+2. Ensure the user is on the inventory page (`/inventory.html`).
+
+#### Acceptance Criteria:
+
+**AC1: When sort dropdown is pressed Then the dropdown contains options: "Name (A to Z)", "Name (Z to A)", "Price (low to high)", "Price (high to low)".**
+
+1. Locate the sort dropdown on the inventory page.
+2. Click the sort dropdown to open it.
+3. Verify that the dropdown contains the following options:
+   - "Name (A to Z)"
+   - "Name (Z to A)"
+   - "Price (low to high)"
+   - "Price (high to low)"
+
+**AC2: Given dropdown is pressed When selecting "Price (low to high)" Then products are sorted by price, lowest first.**
+
+1. Click the sort dropdown to open it.
+2. Select the option "Price (low to high)".
+3. Verify that the products are sorted by price in ascending order (lowest price first).
+
+**AC3: Given dropdown is pressed When selecting "Price (high to low)" Then products are sorted by price, highest first.**
+
+1. Click the sort dropdown to open it.
+2. Select the option "Price (high to low)".
+3. Verify that the products are sorted by price in descending order (highest price first).
+
+### Example Test Script
+
+Here's a simplified example of how you might write a test script for these acceptance criteria:
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+# Initialize the WebDriver (assuming Chrome)
+driver = webdriver.Chrome()
+
+# Navigate to the login page
+driver.get("https://www.saucedemo.com")
+
+# Log in with the provided credentials
+username_field = driver.find_element(By.ID, "user-name")
+password_field = driver.find_element(By.ID, "password")
+login_button = driver.find_element(By.ID, "login-button")
+
+username_field.send_keys("standard_user")
+password_field.send_keys("secret_sauce")
+login_button.click()
+
+# Verify the sort dropdown options
+sort_dropdown = Select(driver.find_element(By.CLASS_NAME, "product_sort_container"))
+options = [option.text for option in sort_dropdown.options]
+expected_options = ["Name (A to Z)", "Name (Z to A)", "Price (low to high)", "Price (high to low)"]
+assert options == expected_options, f"Expected {expected_options}, but got {options}"
+
+# Sort by price low to high
+sort_dropdown.select_by_visible_text("Price (low to high)")
+# Add assertion to verify the products are sorted by price in ascending order
+
+# Sort by price high to low
+sort_dropdown.select_by_visible_text("Price (high to low)")
+# Add assertion to verify the products are sorted by price in descending order
+
+# Close the WebDriver
+driver.quit()
+```
+
+### Notes:
+1. Ensure you have the necessary WebDriver and dependencies installed.
+2. The assertions to verify the sorting order will depend on how the product prices are displayed and can be extracted from the page.
+3. Adjust the locators (`By.ID`, `By.CLASS_NAME`, etc.) as per the actual structure of the inventory page.
+
+By following these steps, you can ensure that the sorting functionality for products by price works as expected.
+
+Total tokens used: 1122

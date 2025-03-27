@@ -1,0 +1,55 @@
+To ensure a smooth and successful checkout process for the user, let's go through the acceptance criteria and the steps involved in the test scenario:
+
+### Preconditions:
+1. The user is logged in using the provided credentials:
+   - Username: `standard_user`
+   - Password: `secret_sauce`
+2. The user has added at least one item to the shopping cart.
+3. The user is currently on the shopping cart page (`/cart.html`).
+
+### Acceptance Criteria:
+
+#### AC1: Navigate to 'Checkout: Your Information' Page
+- **Given**: There is at least one product in the cart.
+- **When**: The user clicks on the "Checkout" button.
+- **Then**: The user should be navigated to the 'Checkout: Your Information' page (`/checkout-step-one.html`).
+
+#### AC2: Enter Information and Proceed to 'Checkout: Overview' Page
+- **Given**: The user is on the 'Checkout: Your Information' page.
+- **When**: The user inputs the First Name, Last Name, and Postal Code into the respective fields:
+  - First Name: `Jane`
+  - Last Name: `Doe`
+  - Postal Code: `12345`
+- **And**: The user clicks "Continue".
+- **Then**: The user should be navigated to the 'Checkout: Overview' page (`/checkout-step-two.html`).
+- **And**: The 'Checkout: Overview' page should correctly display:
+  - The item(s) from the cart.
+  - Item total (subtotal).
+  - Tax.
+  - Total price.
+
+#### AC3: Complete the Checkout Process
+- **When**: The user clicks 'Finish' on the 'Checkout: Overview' page.
+- **Then**: The user should be navigated to the 'Checkout: Complete!' page (`/checkout-complete.html`).
+- **And**: The 'Checkout: Complete!' page should display a success message (e.g., "THANK YOU FOR YOUR ORDER").
+
+#### AC4: Return Home and Verify Cart is Empty
+- **Given**: The user is on the "Checkout: Complete!" page.
+- **When**: The user clicks the "Back home" button.
+- **Then**: The user should be redirected to the product list page.
+- **And**: The shopping cart should be empty after successfully completing the order.
+
+### Test Execution Steps:
+
+1. **Log in** with the provided credentials.
+2. **Add item(s)** to the cart.
+3. **Navigate** to the shopping cart page (`/cart.html`).
+4. **Click** the "Checkout" button and verify navigation to `/checkout-step-one.html`.
+5. **Enter** the required information (First Name, Last Name, Postal Code) and **click** "Continue".
+6. **Verify** navigation to `/checkout-step-two.html` and check that the cart details, subtotal, tax, and total are correct.
+7. **Click** "Finish" and verify navigation to `/checkout-complete.html` with the appropriate success message.
+8. **Click** "Back home" and ensure the user is redirected to the product list page and the cart is empty.
+
+By following these steps and meeting all acceptance criteria, the checkout process should be successfully and seamlessly completed for the user.
+
+Total tokens used: 1005

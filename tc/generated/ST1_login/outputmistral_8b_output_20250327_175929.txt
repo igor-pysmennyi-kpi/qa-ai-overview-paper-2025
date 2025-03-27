@@ -1,0 +1,106 @@
+To test the login functionality of the system, you can follow these steps:
+
+### Test Case 1: Correct Login Data
+
+**Preconditions:**
+- User opens the main page.
+
+**Steps:**
+1. Navigate to the login page.
+2. Enter the correct username: `standard_user`.
+3. Enter the correct password: `secret_sauce`.
+4. Click the login button.
+
+**Expected Result:**
+- The user is redirected to the product list page.
+
+### Test Case 2: Incorrect Password
+
+**Preconditions:**
+- User opens the main page.
+
+**Steps:**
+1. Navigate to the login page.
+2. Enter the correct username: `standard_user`.
+3. Enter the incorrect password: `password01`.
+4. Click the login button.
+
+**Expected Result:**
+- The user stays on the login page.
+- An error message "Username and password do not match any user in this service" is displayed.
+
+### Test Script
+
+Here is a sample test script for the above test cases using a testing framework like Selenium in Python:
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize the WebDriver (e.g., Chrome)
+driver = webdriver.Chrome()
+
+# Open the main page
+driver.get("http://your-main-page-url")
+
+# Test Case 1: Correct Login Data
+def test_correct_login():
+    # Navigate to the login page
+    driver.get("http://your-login-page-url")
+
+    # Enter correct username and password
+    username_field = driver.find_element(By.ID, "username")
+    password_field = driver.find_element(By.ID, "password")
+    username_field.send_keys("standard_user")
+    password_field.send_keys("secret_sauce")
+
+    # Click the login button
+    login_button = driver.find_element(By.ID, "login-button")
+    login_button.click()
+
+    # Wait for the product list page to load
+    time.sleep(2)
+
+    # Check if the user is redirected to the product list page
+    assert "product list" in driver.title
+
+# Test Case 2: Incorrect Password
+def test_incorrect_password():
+    # Navigate to the login page
+    driver.get("http://your-login-page-url")
+
+    # Enter correct username and incorrect password
+    username_field = driver.find_element(By.ID, "username")
+    password_field = driver.find_element(By.ID, "password")
+    username_field.send_keys("standard_user")
+    password_field.send_keys("password01")
+
+    # Click the login button
+    login_button = driver.find_element(By.ID, "login-button")
+    login_button.click()
+
+    # Wait for the error message to appear
+    time.sleep(2)
+
+    # Check if the user stays on the login page and the error message is displayed
+    error_message = driver.find_element(By.ID, "error-message")
+    assert "Username and password do not match any user in this service" in error_message.text
+
+# Run the test cases
+test_correct_login()
+test_incorrect_password()
+
+# Close the WebDriver
+driver.quit()
+```
+
+### Notes:
+1. Replace `"http://your-main-page-url"` and `"http://your-login-page-url"` with the actual URLs of your main page and login page.
+2. Ensure that the IDs used in the script (`username`, `password`, `login-button`, `error-message`) match the actual IDs in your HTML.
+3. Adjust the sleep times (`time.sleep(2)`) as needed based on your application's performance.
+
+This script will help you automate the login tests and verify that the system behaves as expected for both correct and incorrect login credentials.
+
+Total tokens used: 894

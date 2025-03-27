@@ -1,0 +1,48 @@
+To ensure that the feature for adding an item to the shopping cart directly from the product list works as expected, we can create a series of test scenarios based on the provided acceptance criteria and preconditions. Here's a structured approach to testing the feature:
+
+### Test Scenarios
+
+#### Precondition
+- Ensure the user is logged in with the given credentials (username: `standard_user`, password: `secret_sauce`) and is on the inventory page (`/inventory.html`).
+
+#### Test Scenario 1: Verify "Add to cart" Button Visibility (AC1)
+1. **Given** the user is on the inventory page.
+2. **Then** verify that each product item listed on the page has a visible "Add to cart" button.
+
+#### Test Scenario 2: Add Item to Cart and Update Cart Badge (AC2)
+1. **Given** the user is on the inventory page.
+2. **When** the user clicks the "Add to cart" button for a specific product.
+3. **Then** verify that a single item is added to the shopping cart.
+4. **And** check that the shopping cart icon in the header updates to display a badge indicating the total number of items currently in the cart. For example, it should show '1' after adding the first item.
+
+#### Test Scenario 3: View Cart and Verify Added Item (AC3)
+1. **Given** a product is added to the shopping cart.
+2. **When** the user clicks on the cart icon.
+3. **Then** verify that the user is redirected to the shopping cart page.
+4. **And** confirm that the selected item is visible in the cart.
+
+### Test Execution Steps
+
+For each scenario, perform the following steps:
+
+1. **Login to the Application:**
+   - Navigate to the login page.
+   - Enter the username `standard_user` and password `secret_sauce`.
+   - Submit the login form.
+
+2. **Navigate to Inventory Page:**
+   - Ensure you are redirected to `/inventory.html`.
+
+3. **Execute Test Scenarios:**
+   - For **Scenario 1**, visually inspect or use automated checks to ensure the "Add to cart" button is visible for each product.
+   - For **Scenario 2**, click the "Add to cart" button for a product and verify the cart badge updates correctly.
+   - For **Scenario 3**, click the cart icon and verify that the item is present in the cart.
+
+### Expected Results
+- **Scenario 1:** Each product should have a visible "Add to cart" button.
+- **Scenario 2:** Clicking "Add to cart" should add one item to the cart, and the cart badge should reflect the correct number of items.
+- **Scenario 3:** Clicking the cart icon should take the user to the cart page, where the added item is visible.
+
+By following these test scenarios and steps, you can verify that the feature functions according to the specified acceptance criteria and provides a seamless shopping experience for the user.
+
+Total tokens used: 817

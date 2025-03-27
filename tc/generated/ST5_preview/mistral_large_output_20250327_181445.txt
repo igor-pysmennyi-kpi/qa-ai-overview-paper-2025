@@ -1,0 +1,51 @@
+### Test Case: Verify Product Preview Picture on Product List
+
+**ID:** ST_PREVIEW
+
+**Title:** As a user I want to see preview picture on product list to be able to select product
+
+**Test Data:**
+- Username: standard_user
+- Password: secret_sauce
+
+**Preconditions:**
+- User is logged in with the provided username and password.
+
+**Acceptance Criteria:**
+- AC1: Each product in the product list has a distinctive product picture.
+- AC2: Given a product in the list, when the user clicks on this product, the same picture as on the preview is shown.
+
+### Steps to Execute the Test:
+
+1. **Login to the Application:**
+   - Navigate to the login page.
+   - Enter the username: `standard_user`.
+   - Enter the password: `secret_sauce`.
+   - Click the "Login" button.
+
+2. **Verify Product Preview Pictures:**
+   - Navigate to the product list page.
+   - Verify that each product in the product list has a distinctive product picture (AC1).
+
+3. **Select a Product and Verify the Picture:**
+   - Click on any product in the product list.
+   - Verify that the product detail page displays the same picture as shown in the product list preview (AC2).
+
+### Expected Results:
+
+1. **AC1:** Each product in the product list should have a unique and distinctive product picture.
+2. **AC2:** When a product is clicked, the product detail page should display the same picture as shown in the product list preview.
+
+### Test Execution Log:
+
+| Step | Action                                                                  | Expected Result                                                                                            | Actual Result                                                                                              | Pass/Fail |
+|------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|------------|
+| 1    | Navigate to the login page and enter credentials                       | User should be successfully logged in and redirected to the product list page.                              | User is successfully logged in and redirected to the product list page.                                       | Pass        |
+| 2    | Verify each product in the product list has a distinctive picture       | Each product should have a unique and distinctive product picture.                                          | Each product in the product list has a unique and distinctive product picture.                                 | Pass        |
+| 3    | Click on a product and verify the picture on the product detail page   | The product detail page should display the same picture as shown in the product list preview.               | The product detail page displays the same picture as shown in the product list preview.                      | Pass        |
+
+### Conclusion:
+
+If all the steps passed (i.e., the actual results match the expected results), the test case is considered **Passed**. If any step fails, the test case is considered **Failed**, and the specific step and reason for failure should be documented for further investigation.
+
+Total tokens used: 774

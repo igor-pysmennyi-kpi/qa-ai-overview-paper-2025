@@ -1,0 +1,137 @@
+Okay, here's a breakdown of the test case ST_SORT, along with suggested implementations for the acceptance criteria (ACs), suitable for automated testing using a framework like Selenium or Cypress.  I'll assume a basic understanding of these frameworks, and provide examples in a pseudo-code/generic approach that can be easily adapted to your specific chosen framework.
+
+**ST_SORT: As a user, I want to sort products by price to find affordable items**
+
+**Test Data:**
+
+*   username: `standard_user`
+*   password: `secret_sauce`
+
+**Preconditions:**
+
+*   User logged in with username and password.
+*   User is on the inventory page (`/inventory.html`).
+
+**Acceptance Criteria:**
+
+*   **AC1: When sort dropdown is pressed Then the dropdown contains options: "Name (A to Z)", "Name (Z to A)", "Price (low to high)", "Price (high to low)".**
+*   **AC2: Given dropdown is pressed When selecting "Price (low to high)" Then products are sorted by price, lowest first.**
+*   **AC3: Given dropdown is pressed When selecting "Price (high to low)" Then products are sorted by price, highest first.**
+
+---
+
+**Test Implementation (Conceptual & Pseudo-code)**
+
+**1. Setup (Common for all tests):**
+
+```
+// Assume you have a framework like Selenium or Cypress setup
+
+// 1.1. Navigate to login page (e.g., "/login.html")
+openLoginPage()
+
+// 1.2. Enter username and password
+enterUsername("standard_user")
+enterPassword("secret_sauce")
+
+// 1.3. Click Login button
+clickLoginButton()
+
+// 1.4. Verify that you are on the inventory page (/inventory.html)
+verifyInventoryPage()
+```
+
+**2. AC1: Verify Dropdown Options**
+
+```
+// 2.1. Find the sort dropdown element (e.g., by ID, CSS selector, or XPath)
+sortDropdown = findElement(by = "sortDropdownSelector") // Replace with your selector
+
+// 2.2. Click on the dropdown to open it
+click(sortDropdown)
+
+// 2.3. Get all options from the dropdown (e.g., by finding all <option> elements)
+dropdownOptions = getDropdownOptions(sortDropdown)
+
+// 2.4. Assert that the options are as expected.  Use an array of expected options.
+expectedOptions = ["Name (A to Z)", "Name (Z to A)", "Price (low to high)", "Price (high to low)"]
+assertOptionsMatch(dropdownOptions, expectedOptions)
+```
+
+**3. AC2: Sort by Price (low to high)**
+
+```
+// 3.1. Find the sort dropdown element
+sortDropdown = findElement(by = "sortDropdownSelector")
+
+// 3.2. Click to open the dropdown
+click(sortDropdown)
+
+// 3.3. Select the "Price (low to high)" option
+selectOption(sortDropdown, "Price (low to high)") // Or equivalent for your framework
+
+// 3.4. Get the prices of all products on the page (e.g., by finding elements with the price and extracting their text)
+productPrices = getProductPrices()
+
+// 3.5. Convert prices to numbers (remove currency symbols, etc.)
+numericalPrices = convertToNumbers(productPrices)
+
+// 3.6. Assert that the prices are sorted in ascending order.
+assertArrayIsSortedAscending(numericalPrices)
+```
+
+**4. AC3: Sort by Price (high to low)**
+
+```
+// 4.1. Find the sort dropdown element
+sortDropdown = findElement(by = "sortDropdownSelector")
+
+// 4.2. Click to open the dropdown
+click(sortDropdown)
+
+// 4.3. Select the "Price (high to low)" option
+selectOption(sortDropdown, "Price (high to low)")
+
+// 4.4. Get the prices of all products on the page
+productPrices = getProductPrices()
+
+// 4.5. Convert prices to numbers
+numericalPrices = convertToNumbers(productPrices)
+
+// 4.6. Assert that the prices are sorted in descending order.
+assertArrayIsSortedDescending(numericalPrices)
+```
+
+**Helper Functions (Conceptual):**
+
+These are the functions you'd need to implement based on your chosen testing framework.
+
+*   `openLoginPage()`: Navigates to the login page.
+*   `enterUsername(username)`:  Enters the username in the username field.
+*   `enterPassword(password)`: Enters the password in the password field.
+*   `clickLoginButton()`: Clicks the login button.
+*   `verifyInventoryPage()`: Verifies that the current page is the inventory page.  This might involve checking the URL, page title, or the presence of specific elements.
+*   `findElement(by = "selector")`: Locates a web element using a selector (e.g., ID, CSS selector, XPath).
+*   `click(element)`: Clicks on a web element.
+*   `getDropdownOptions(dropdownElement)`:  Gets all options from a dropdown element (e.g., extracts the text from each `<option>` element).
+*   `assertOptionsMatch(actualOptions, expectedOptions)`:  Compares the actual dropdown options with the expected options.
+*   `selectOption(dropdownElement, optionText)`: Selects an option from the dropdown by its text.
+*   `getProductPrices()`:  Gets the prices of all products on the page. This will likely involve finding elements with the price (e.g., by CSS selector like ".inventory_item_price") and extracting their text content.
+*   `convertToNumbers(priceStrings)`: Converts an array of price strings (e.g., "$9.99") into an array of numbers (e.g., `[9.99]`).  This will involve removing currency symbols and parsing the string into a number.
+*   `assertArrayIsSortedAscending(numbers)`:  Asserts that an array of numbers is sorted in ascending order.
+*   `assertArrayIsSortedDescending(numbers)`:  Asserts that an array of numbers is sorted in descending order.
+
+**Important Considerations:**
+
+*   **Framework Specifics:**  Adapt the pseudo-code to your chosen testing framework (Selenium, Cypress, etc.).  The core logic will be the same, but the syntax and element selection methods will differ.
+*   **Element Locators:**  Use specific and robust element locators (IDs, CSS selectors, XPath) to find the relevant elements on the page.  Make sure your locators are stable and won't break easily when the UI changes.  Test your locators in the browser's developer tools.
+*   **Error Handling:**  Include error handling in your tests.  For example, check if elements are present before interacting with them, and handle exceptions gracefully.
+*   **Data Preparation:**  Ensure that the products on the page have different prices for AC2 and AC3 to have a meaningful test.
+*   **Test Data Management:**  Consider how you'll manage your test data (usernames, passwords).  You might store them in configuration files or environment variables.
+*   **Page Load Times:**  Account for page load times and potential delays.  Use explicit waits or implicit waits to ensure that elements are loaded before you try to interact with them.
+*   **Clean Up:**  After your tests run consider cleaning up the test state.  For example, you could log out after each test, or restore the database to a known state.
+
+This comprehensive approach should help you create well-structured and effective automated tests for the sorting functionality. Remember to replace the pseudo-code with the actual code for your chosen testing framework and adjust element selectors as needed.
+
+
+Total tokens used: 1880

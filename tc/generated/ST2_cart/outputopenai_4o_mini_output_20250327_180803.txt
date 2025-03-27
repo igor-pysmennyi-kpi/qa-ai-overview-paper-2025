@@ -1,0 +1,53 @@
+### Test Case for User Story ST_CART
+
+**Test Case ID**: TC_ST_CART_001  
+**Test Case Title**: Verify adding an item to the shopping cart from the product list
+
+**Preconditions**:
+- User is logged in with username: `standard_user` and password: `secret_sauce`.
+- User is on the inventory page at `/inventory.html`.
+
+**Test Data**:
+- User credentials: 
+  - Username: `standard_user`
+  - Password: `secret_sauce`
+  
+**Acceptance Criteria**:
+- **AC1**: Each product item listed on the inventory page should have a visible "Add to cart" button.
+- **AC2**: When the user clicks the "Add to cart" button for a specific product:
+  - One item should be added to the shopping cart.
+  - The shopping cart icon in the header should update to display a badge indicating the total number of items currently in the cart.
+- **AC3**: When the user clicks on the cart icon:
+  - The user can see the selected item(s).
+
+### Steps to Execute
+
+1. **Navigate to Inventory Page**:
+   - Open the application and log in using the provided credentials.
+   - Verify the URL is `/inventory.html`.
+
+2. **Verify Visibility of "Add to Cart" Buttons**:
+   - Check that each product listed on the inventory page has a visible "Add to cart" button.
+   - **Expected Result**: Each product item has a corresponding "Add to cart" button.
+
+3. **Click "Add to Cart" for a Specific Product**:
+   - Select a specific product from the list and click the "Add to cart" button.
+   - **Expected Result**: The item is added to the shopping cart.
+
+4. **Verify Shopping Cart Icon Update**:
+   - Observe the shopping cart icon in the header.
+   - **Expected Result**: The shopping cart icon should show a badge with '1' indicating one item is in the cart.
+
+5. **Click on the Cart Icon**:
+   - Click on the shopping cart icon in the header.
+   - **Expected Result**: The user should see the selected item(s) in the shopping cart.
+
+### Postconditions:
+- The shopping cart should contain the item that was added.
+- The user should be able to view the item in the cart.
+
+### Notes:
+- Ensure the application is responsive and the "Add to cart" button is accessible on different devices.
+- Test with multiple products to confirm that the shopping cart updates correctly for each item added.
+
+Total tokens used: 729

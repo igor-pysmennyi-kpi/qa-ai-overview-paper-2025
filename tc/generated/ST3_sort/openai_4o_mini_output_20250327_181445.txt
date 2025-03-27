@@ -1,0 +1,66 @@
+### Test Case: ST_SORT
+
+**ID**: ST_SORT  
+**Title**: As a user, I want to sort products by price so I can find affordable items.  
+
+#### Test Data
+- **Username**: standard_user  
+- **Password**: secret_sauce  
+
+#### Preconditions
+- User is logged in with the provided username and password.
+- User is on the inventory page (/inventory.html).
+
+#### Acceptance Criteria
+
+**AC1: Sort Dropdown Options**
+- **Given** the user is on the inventory page
+- **When** the sort dropdown is pressed
+- **Then** the dropdown should contain options: 
+  - "Name (A to Z)" 
+  - "Name (Z to A)" 
+  - "Price (low to high)" 
+  - "Price (high to low)"
+
+**Test Steps**:
+1. Locate and click the sort dropdown on the inventory page.
+2. Verify that the dropdown contains the correct sorting options.
+
+**Expected Result**: The dropdown displays the options: "Name (A to Z)", "Name (Z to A)", "Price (low to high)", "Price (high to low)".
+
+---
+
+**AC2: Sort Products by Price (Low to High)**
+- **Given** the sort dropdown is pressed
+- **When** the user selects "Price (low to high)"
+- **Then** the products should be sorted by price, from lowest to highest.
+
+**Test Steps**:
+1. Open the sort dropdown.
+2. Select the option "Price (low to high)".
+3. Observe the order of products displayed on the page.
+
+**Expected Result**: Products are sorted by price, with the lowest-priced item displayed first.
+
+---
+
+**AC3: Sort Products by Price (High to Low)**
+- **Given** the sort dropdown is pressed
+- **When** the user selects "Price (high to low)"
+- **Then** the products should be sorted by price, from highest to lowest.
+
+**Test Steps**:
+1. Open the sort dropdown.
+2. Select the option "Price (high to low)".
+3. Observe the order of products displayed on the page.
+
+**Expected Result**: Products are sorted by price, with the highest-priced item displayed first.
+
+---
+
+### Notes
+- Ensure that the product data includes a variety of prices to effectively test the sorting functionality.
+- Consider edge cases, such as products with the same price, to verify that the sorting behavior remains consistent and accurate.
+- Test the dropdown functionality across different browsers and devices to ensure compatibility.
+
+Total tokens used: 696

@@ -1,0 +1,100 @@
+Here are detailed test cases structured clearly based on the provided User Story and Acceptance Criteria:
+
+Test Case 1: Verify successful login with correct credentials  
+Test Case ID: ST_LOGIN_TC_01  
+Priority: High  
+Severity: Critical  
+
+Precondition:
+- User has opened the application's main login page.
+
+Test Data:
+- Username: standard_user  
+- Password: secret_sauce
+
+Steps:
+1. Enter correct username "standard_user" in username field.
+2. Enter correct password "secret_sauce" in password field.
+3. Click on the "Login" button.
+
+Expected Result:
+- The user is successfully logged in.
+- The application redirects the user to the "Products List" page.
+
+Acceptance Criteria Covered: AC1 (correct credentials login)
+
+---
+
+Test Case 2: Verify login failure with incorrect password  
+Test Case ID: ST_LOGIN_TC_02  
+Priority: High  
+Severity: Major  
+
+Precondition:
+- User has opened the application's main login page.
+
+Test Data:
+- Username: standard_user  
+- Password: password01 (Incorrect Password)
+
+Steps:
+1. Enter correct username "standard_user" in username field.
+2. Enter incorrect password "password01" in password field.
+3. Click on the "Login" button.
+
+Expected Result:
+- User remains on the Login page.
+- An error message displays: "Username and password do not match any user in this service".
+
+Acceptance Criteria Covered: AC2 (incorrect credentials error message)
+
+---
+
+(Optional additional Test Cases you may wish to add):
+
+Test Case 3: Verify application behavior with empty input fields  
+Test Case ID: ST_LOGIN_TC_03  
+Priority: Medium  
+Severity: Minor  
+
+Precondition:
+- User has opened the application's main login page.
+
+Steps:
+1. Leave "username" and "password" fields empty.
+2. Click on the "Login" button.
+
+Expected Result:
+- User remains on the Login page.
+- An appropriate error message regarding empty fields ("Username required" or "Password required") is displayed clearly.
+
+---
+
+Test Case 4: Verify login functionality with case-sensitive data  
+Test Case ID: ST_LOGIN_TC_04  
+Priority: Medium  
+Severity: Minor  
+
+Precondition:
+- User has opened the application's main login page.
+
+Test Data:
+- Username: STANDARD_USER (uppercase)  
+- Password: SECRET_SAUCE (uppercase)
+
+Steps:
+1. Enter username "STANDARD_USER" (uppercase version of correct username).
+2. Enter password "SECRET_SAUCE" (uppercase version of correct password).
+3. Click on the "Login" button.
+
+Expected Result:
+- User remains on the login page.
+- User receives error message: "Username and password do not match any user in this service".
+
+Purpose: Verify login fields are case-sensitive.
+
+---
+
+These clearly structured and comprehensive test cases ensure coverage of your specified User Story "ST_LOGIN" effectively.
+
+Total tokens used: 709

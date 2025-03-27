@@ -1,0 +1,85 @@
+Here’s a structured approach to the test case for the checkout process based on the provided details:
+
+### Test Case ID: ST_CHECKOUT
+
+**Title:** Complete the checkout process to purchase items in the cart.
+
+---
+
+#### Test Data:
+- **Username:** standard_user
+- **Password:** secret_sauce
+- **First Name:** Jane
+- **Last Name:** Doe
+- **Postal Code:** 12345
+
+---
+
+#### Preconditions:
+1. User is logged in with the username and password.
+2. User has at least one item added to the shopping cart.
+3. User is on the shopping cart page (`/cart.html`).
+
+---
+
+#### Acceptance Criteria:
+
+**AC1: Navigate to Checkout Information Page**
+- **Given:** Product is in the cart.
+- **When:** User clicks on the "Checkout" button.
+- **Then:** User is navigated to the 'Checkout: Your Information' page (`/checkout-step-one.html`).
+
+**Test Steps:**
+1. Verify that the product is present in the cart.
+2. Click the "Checkout" button.
+3. Assert URL is `/checkout-step-one.html`.
+
+---
+
+**AC2: Navigate to Checkout Overview Page**
+- **Given:** User has input First Name, Last Name, and Postal Code into the respective fields.
+- **When:** User clicks "Continue".
+- **Then:** User navigates to the 'Checkout: Overview' page (`/checkout-step-two.html`).
+- **And:** The 'Checkout: Overview' page correctly displays the item(s) from the cart, Item total (subtotal), Tax, and Total price.
+
+**Test Steps:**
+1. Input First Name, Last Name, and Postal Code into the respective fields.
+2. Click the "Continue" button.
+3. Assert URL is `/checkout-step-two.html`.
+4. Verify that the items in the cart are displayed correctly.
+5. Check that the Item total (subtotal), Tax, and Total price are accurate.
+
+---
+
+**AC3: Complete Checkout Process**
+- **When:** User clicks 'Finish' on the 'Checkout: Overview'.
+- **Then:** User navigates to the 'Checkout: Complete!' page (`/checkout-complete.html`).
+- **And:** The 'Checkout: Complete!' page displays a success message (e.g., "THANK YOU FOR YOUR ORDER").
+
+**Test Steps:**
+1. Click the "Finish" button on the 'Checkout: Overview'.
+2. Assert URL is `/checkout-complete.html`.
+3. Check that the success message "THANK YOU FOR YOUR ORDER" is displayed.
+
+---
+
+**AC4: Navigate Back to Home and Empty Cart**
+- **Given:** User stays on the "Checkout: Complete!" page.
+- **When:** User clicks the "Back home" button.
+- **Then:** User is redirected to the product list page.
+- **And:** The shopping cart is empty after successfully completing the order.
+
+**Test Steps:**
+1. Click the "Back home" button on the 'Checkout: Complete!' page.
+2. Assert URL is the product list page (check the expected URL).
+3. Verify that the shopping cart is empty.
+
+---
+
+### Additional Notes:
+- Ensure proper error handling and validation for input fields.
+- Consider edge cases, such as invalid postal codes or missing required fields.
+- Optionally, include tests for various item types (e.g., different quantities, item variations).
+- Document any issues encountered during testing and retest once resolved.
+
+Total tokens used: 1027

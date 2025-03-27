@@ -1,0 +1,87 @@
+Okay, here are test cases based on the user story ST_CART and its acceptance criteria.
+
+**User Story:** ST_CART
+**Title:** As a user, I want to add an item to my shopping cart directly from the product list so that I can collect items I intend to purchase.
+**Test data:** username: standard_user; password: secret_sauce
+**Preconditions:** User logged in with username and password and is on the inventory page (/inventory.html).
+
+---
+
+**Test Case ID:** TC_ST_CART_01
+**Title:** Verify "Add to cart" button visibility for all products
+**Covers:** AC1
+**Preconditions:**
+1. User is logged in as 'standard_user'.
+2. User is on the inventory page (`/inventory.html`).
+**Steps:**
+1. Observe the list of products displayed on the page.
+2. Inspect the first product item in the list.
+3. Inspect the last product item in the list.
+4. (Spot check) Inspect a few products in the middle of the list.
+**Expected Results:**
+1. Each product item displayed on the inventory page has a clearly visible button with the text "Add to cart".
+2. The "Add to cart" button is enabled (clickable).
+
+---
+
+**Test Case ID:** TC_ST_CART_02
+**Title:** Verify adding a single item updates cart icon and item appears in cart
+**Covers:** AC2, AC3
+**Preconditions:**
+1. User is logged in as 'standard_user'.
+2. User is on the inventory page (`/inventory.html`).
+3. The shopping cart is initially empty (no badge on the cart icon).
+**Steps:**
+1. Note the state of the shopping cart icon in the header (should be empty).
+2. Locate a specific product (e.g., "Sauce Labs Backpack").
+3. Click the "Add to cart" button for the "Sauce Labs Backpack".
+4. Observe the shopping cart icon in the header.
+5. Click on the shopping cart icon in the header.
+6. Observe the items listed on the shopping cart page (`/cart.html`).
+**Expected Results:**
+1. After clicking "Add to cart", the shopping cart icon in the header displays a badge with the number '1'.
+2. The user is navigated to the shopping cart page (`/cart.html`).
+3. The "Sauce Labs Backpack" item is listed in the shopping cart, typically showing its name, description, price, and quantity (1).
+
+---
+
+**Test Case ID:** TC_ST_CART_03
+**Title:** Verify adding multiple different items updates cart count correctly
+**Covers:** AC2 (extended)
+**Preconditions:**
+1. User is logged in as 'standard_user'.
+2. User is on the inventory page (`/inventory.html`).
+3. The shopping cart is initially empty.
+**Steps:**
+1. Click the "Add to cart" button for the first product (e.g., "Sauce Labs Backpack").
+2. Observe the shopping cart icon badge.
+3. Click the "Add to cart" button for a second, different product (e.g., "Sauce Labs Bike Light").
+4. Observe the shopping cart icon badge.
+5. Click the "Add to cart" button for a third, different product (e.g., "Sauce Labs Bolt T-Shirt").
+6. Observe the shopping cart icon badge.
+7. (Optional) Click the shopping cart icon.
+**Expected Results:**
+1. After adding the first item, the cart icon badge shows '1'.
+2. After adding the second item, the cart icon badge shows '2'.
+3. After adding the third item, the cart icon badge shows '3'.
+4. (Optional) The cart page lists all three added items.
+
+---
+
+**Test Case ID:** TC_ST_CART_04
+**Title:** Verify the "Add to cart" button state changes after adding an item
+**Covers:** Implied behavior related to AC2
+**Preconditions:**
+1. User is logged in as 'standard_user'.
+2. User is on the inventory page (`/inventory.html`).
+**Steps:**
+1. Locate a specific product (e.g., "Sauce Labs Fleece Jacket"). Note the button text is "Add to cart".
+2. Click the "Add to cart" button for the "Sauce Labs Fleece Jacket".
+3. Observe the button associated with the "Sauce Labs Fleece Jacket" again on the inventory page.
+**Expected Results:**
+1. The button text for the "Sauce Labs Fleece Jacket" changes from "Add to cart" to "Remove".
+2. The button's appearance might change (e.g., color).
+
+---
+
+Total tokens used: 1249

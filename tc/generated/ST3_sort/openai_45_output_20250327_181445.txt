@@ -1,0 +1,72 @@
+## Test Case: ST_SORT - Sort products by price  
+
+### Test Data  
+- Username: standard_user  
+- Password: secret_sauce  
+
+### Preconditions  
+- User is logged in with provided username/password.  
+- User is currently on the inventory page (/inventory.html).  
+
+### Acceptance Criteria  
+- AC1: When sort dropdown is pressed, the dropdown contains the following options:  
+  - "Name (A to Z)"  
+  - "Name (Z to A)"  
+  - "Price (low to high)"  
+  - "Price (high to low)"  
+
+- AC2: Given the dropdown is pressed, when selecting "Price (low to high)", products are sorted by price with the lowest-priced items at the top.  
+
+- AC3: Given the dropdown is pressed, when selecting "Price (high to low)", products are sorted by price with the highest-priced items at the top.  
+
+---
+
+## Test Steps  
+
+### TC_ST_SORT_001 - Verify sorting dropdown options (AC1)  
+
+| Step | Action | Expected Result |  
+|------|--------|-----------------|  
+| 1 | Ensure user is logged in and is on inventory page | Inventory page (/inventory.html) is displayed |  
+| 2 | Locate and click the sorting dropdown at the top-right of the inventory page | Sorting dropdown expands and displays available sorting options |  
+| 3 | Verify the dropdown options displayed | Dropdown options are exactly:  
+- "Name (A to Z)"  
+- "Name (Z to A)"  
+- "Price (low to high)"  
+- "Price (high to low)"  
+
+---
+
+### TC_ST_SORT_002 - Verify sorting by price (low to high) (AC2)  
+
+| Step | Action | Expected Result |  
+|------|--------|-----------------|  
+| 1 | Ensure user is logged in and on inventory page | Inventory page (/inventory.html) is displayed |  
+| 2 | Click sorting dropdown | Dropdown expands and displays sorting options |  
+| 3 | Select option "Price (low to high)" | Dropdown shows selected option "Price (low to high)", page refreshes or updates product ordering |  
+| 4 | Verify the order of products displayed | Products are sorted correctly from lowest to highest price (ascending order) |  
+
+---
+
+### TC_ST_SORT_003 - Verify sorting by price (high to low) (AC3)  
+
+| Step | Action | Expected Result |  
+|------|--------|-----------------|  
+| 1 | Ensure user is logged in and on inventory page | Inventory page (/inventory.html) is displayed |  
+| 2 | Click sorting dropdown | Dropdown expands and displays sorting options |  
+| 3 | Select option "Price (high to low)" | Dropdown shows selected option "Price (high to low)", page refreshes or updates product ordering |  
+| 4 | Verify the order of products displayed | Products are sorted correctly from highest to lowest price (descending order) |  
+
+---
+
+## Postconditions  
+- User remains logged in and can continue interacting with the inventory page.  
+- Sorting selection persists until changed or user logs out.  
+
+---  
+
+## Notes  
+- Product prices must be clearly visible and consistent to verify sorting correctly.  
+- Ensure that sorting does not cause any unexpected behavior or errors.
+
+Total tokens used: 847

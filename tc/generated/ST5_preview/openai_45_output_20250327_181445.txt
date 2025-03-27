@@ -1,0 +1,44 @@
+## Test Case: ST_PREVIEW - As a user, I want to see preview picture on product list to be able to select product
+
+### Preconditions:
+- User is logged in using valid credentials:
+  - Username: `standard_user`
+  - Password: `secret_sauce`
+
+### Test Data:
+- URL of application under test (AUT)
+- Username: `standard_user`
+- Password: `secret_sauce`
+
+---
+
+### Test Steps:
+
+| Step | Action | Expected Result |  
+|------|--------|-----------------|  
+| 1 | Open the application and login using provided credentials (`standard_user` / `secret_sauce`). | User is successfully logged in and the product list page is displayed. |  
+| 2 | Verify that each product listed on the product list page has a visible preview image. | Each product shown in product list has a clearly visible and distinct preview picture. (AC1) |  
+| 3 | Select a product from the product list by clicking on its preview picture or its name. | The product details page is displayed. |  
+| 4 | Compare the preview picture from the product list with the picture displayed on the product details page. | The picture shown on the details page is exactly the same as the preview picture displayed on the product list page. (AC2) |  
+| 5 | Repeat steps 3 and 4 for multiple products to confirm consistent behavior. | Behavior remains consistent across multiple products. |
+
+---
+
+### Acceptance Criteria:
+
+| ID  | Description | Status |  
+|-----|-------------|--------|  
+| AC1 | Each product in the product list has a distinctive product picture. | ☐ Pass / ☐ Fail |  
+| AC2 | Given a product in the list, when the user clicks on this product, then the same picture as on preview is shown. | ☐ Pass / ☐ Fail |
+
+---
+
+### Test Result:
+
+- ☐ Passed  
+- ☐ Failed  
+- Tester Name:  
+- Date:  
+- Comments:
+
+Total tokens used: 511

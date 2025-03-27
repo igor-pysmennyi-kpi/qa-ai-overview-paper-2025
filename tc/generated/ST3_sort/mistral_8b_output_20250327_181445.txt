@@ -1,0 +1,66 @@
+Certainly! Below is a detailed test plan for the scenario where a user wants to sort products by price on the inventory page.
+
+### Test Plan: Sort Products by Price
+
+#### Test Data:
+- **Username:** standard_user
+- **Password:** secret_sauce
+
+#### Preconditions:
+1. The user is logged in with the provided credentials.
+2. The user is on the inventory page (URL: `/inventory.html`).
+
+#### Acceptance Criteria:
+1. **AC1:** When the sort dropdown is pressed, the dropdown contains options:
+   - "Name (A to Z)"
+   - "Name (Z to A)"
+   - "Price (low to high)"
+   - "Price (high to low)"
+
+2. **AC2:** Given the dropdown is pressed, when selecting "Price (low to high)", products are sorted by price, lowest first.
+
+3. **AC3:** Given the dropdown is pressed, when selecting "Price (high to low)", products are sorted by price, highest first.
+
+### Test Steps:
+
+#### Test Case 1: Verify Sort Dropdown Options
+1. **Step 1:** Log in to the application using the provided credentials.
+2. **Step 2:** Navigate to the inventory page.
+3. **Step 3:** Click on the sort dropdown.
+4. **Step 4:** Verify that the dropdown contains the following options:
+   - "Name (A to Z)"
+   - "Name (Z to A)"
+   - "Price (low to high)"
+   - "Price (high to low)"
+
+#### Test Case 2: Sort Products by Price (Low to High)
+1. **Step 1:** Log in to the application using the provided credentials.
+2. **Step 2:** Navigate to the inventory page.
+3. **Step 3:** Click on the sort dropdown.
+4. **Step 4:** Select the option "Price (low to high)".
+5. **Step 5:** Verify that the products are sorted by price, lowest first.
+
+#### Test Case 3: Sort Products by Price (High to Low)
+1. **Step 1:** Log in to the application using the provided credentials.
+2. **Step 2:** Navigate to the inventory page.
+3. **Step 3:** Click on the sort dropdown.
+4. **Step 4:** Select the option "Price (high to low)".
+5. **Step 5:** Verify that the products are sorted by price, highest first.
+
+### Expected Results:
+1. **Test Case 1:**
+   - The sort dropdown should display the following options: "Name (A to Z)", "Name (Z to A)", "Price (low to high)", "Price (high to low)".
+
+2. **Test Case 2:**
+   - After selecting "Price (low to high)", the products should be displayed in ascending order of price.
+
+3. **Test Case 3:**
+   - After selecting "Price (high to low)", the products should be displayed in descending order of price.
+
+### Notes:
+- Ensure that the application's sorting functionality is tested on different devices and browsers to verify cross-browser compatibility.
+- Verify that the sorting is applied correctly and the user interface updates accordingly.
+
+By following this test plan, you can ensure that the sorting functionality for products by price works as expected on the inventory page.
+
+Total tokens used: 864

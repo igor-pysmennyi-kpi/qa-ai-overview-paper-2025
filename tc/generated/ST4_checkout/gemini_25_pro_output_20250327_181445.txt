@@ -1,0 +1,95 @@
+Okay, here are the test cases derived directly from the user story and its acceptance criteria.
+
+---
+
+**Test Suite: ST_CHECKOUT - Checkout Process**
+
+**User Story:** As a user, I want to complete the checkout process so that I can purchase the items I have added to my cart.
+**Test Data:**
+*   Username: `standard_user`
+*   Password: `secret_sauce`
+*   First Name: `Jane`
+*   Last Name: `Doe`
+*   Postal Code: `12345`
+
+**General Preconditions:**
+1.  User is successfully logged in using the provided username and password.
+2.  User has at least one item added to the shopping cart.
+3.  User is currently on the shopping cart page (`/cart.html`).
+
+---
+
+**Test Case ID:** TC_CHECKOUT_001
+**Based on:** AC1
+**Title:** Verify navigation from Cart to Checkout Information page
+**Prerequisites:** General Preconditions met.
+**Test Steps:**
+1.  Observe the current page URL is `/cart.html`.
+2.  Locate and click the "Checkout" button.
+**Expected Results:**
+1.  User is successfully navigated away from `/cart.html`.
+2.  The current page URL is `/checkout-step-one.html`.
+3.  The page title/header indicates 'Checkout: Your Information'.
+
+---
+
+**Test Case ID:** TC_CHECKOUT_002
+**Based on:** AC2
+**Title:** Verify navigation and data display from Checkout Information to Overview page
+**Prerequisites:**
+1.  General Preconditions met.
+2.  User is on the 'Checkout: Your Information' page (`/checkout-step-one.html`) (Result of TC_CHECKOUT_001).
+**Test Steps:**
+1.  Enter the provided First Name (`Jane`) into the 'First Name' input field.
+2.  Enter the provided Last Name (`Doe`) into the 'Last Name' input field.
+3.  Enter the provided Postal Code (`12345`) into the 'Postal Code' input field.
+4.  Click the "Continue" button.
+**Expected Results:**
+1.  User is successfully navigated away from `/checkout-step-one.html`.
+2.  The current page URL is `/checkout-step-two.html`.
+3.  The page title/header indicates 'Checkout: Overview'.
+4.  The item(s) previously added to the cart are correctly listed on the page (verify item name, quantity, price).
+5.  The 'Item total' (subtotal before tax) is correctly calculated and displayed based on the items in the cart.
+6.  A 'Tax' amount is calculated and displayed.
+7.  The 'Total' price (Item total + Tax) is correctly calculated and displayed.
+
+---
+
+**Test Case ID:** TC_CHECKOUT_003
+**Based on:** AC3
+**Title:** Verify navigation and success message on Checkout Complete page
+**Prerequisites:**
+1.  General Preconditions met.
+2.  User has provided valid checkout information.
+3.  User is on the 'Checkout: Overview' page (`/checkout-step-two.html`) (Result of TC_CHECKOUT_002).
+**Test Steps:**
+1.  Locate and click the "Finish" button.
+**Expected Results:**
+1.  User is successfully navigated away from `/checkout-step-two.html`.
+2.  The current page URL is `/checkout-complete.html`.
+3.  The page title/header indicates 'Checkout: Complete!'.
+4.  A success message is prominently displayed on the page (e.g., "THANK YOU FOR YOUR ORDER" or similar).
+
+---
+
+**Test Case ID:** TC_CHECKOUT_004
+**Based on:** AC4
+**Title:** Verify navigation to Product List and empty cart after completion
+**Prerequisites:**
+1.  General Preconditions met.
+2.  User has successfully completed the checkout process.
+3.  User is on the 'Checkout: Complete!' page (`/checkout-complete.html`) (Result of TC_CHECKOUT_003).
+**Test Steps:**
+1.  Locate and click the "Back Home" button.
+2.  Observe the current page URL.
+3.  Observe the shopping cart icon/indicator in the header.
+4.  (Optional but recommended) Navigate directly to the cart page (`/cart.html`).
+**Expected Results:**
+1.  User is successfully navigated away from `/checkout-complete.html`.
+2.  User is redirected to the main product list/inventory page (e.g., `/inventory.html`).
+3.  The shopping cart icon/indicator shows that the cart is empty (e.g., no number badge).
+4.  (Optional) The cart page (`/cart.html`) displays no items.
+
+---
+
+Total tokens used: 1427

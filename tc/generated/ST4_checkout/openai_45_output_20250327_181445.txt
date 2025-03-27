@@ -1,0 +1,100 @@
+Below are detailed test cases covering the provided user story, acceptance criteria, and test data:
+
+## Test Suite: ST_CHECKOUT - Complete Checkout Process  
+
+---
+
+### Preconditions (Ensure these before test execution):  
+- User is logged in as:  
+  - Username: **standard_user**  
+  - Password: **secret_sauce**  
+- At least 1 item is already added to the Shopping Cart.  
+- User is currently on the Shopping Cart page (**/cart.html**).  
+
+---
+
+## Test Case 1: Verify User can navigate from Cart page to Checkout Information page  
+
+**Test Steps:**  
+1. On the Shopping Cart page (/cart.html), verify at least one item is shown in the cart.
+2. Click the **"Checkout"** button.
+
+**Test Data:** (Already provided in preconditions)
+
+**Expected Result:**  
+- User successfully navigates to the "**Checkout: Your Information**" page (/checkout-step-one.html).
+
+**Acceptance Criteria:** AC1 ✅  
+
+---
+
+## Test Case 2: Verify User can enter personal information and continue checkout  
+
+**Test Steps:**  
+1. On the "**Checkout: Your Information**" page (/checkout-step-one.html), enter the following valid information:
+   | Field        | Value       |
+   |--------------|-------------|
+   | First Name   | Jane        |
+   | Last Name    | Doe         |
+   | Postal Code  | 12345       |
+2. Click the **"Continue"** button.
+
+**Expected Result:**  
+- User is navigated to the "**Checkout: Overview**" page (/checkout-step-two.html).
+- The "**Checkout: Overview**" page displays the following correctly:
+  - Item(s) previously added to the cart.
+  - Item total (Subtotal) price.
+  - Applicable Tax amount.
+  - Total price (Item total + Tax).
+
+**Acceptance Criteria:** AC2 ✅  
+
+---
+
+## Test Case 3: Verify User can complete the checkout process  
+
+**Test Steps:**  
+1. On the "**Checkout: Overview**" page (/checkout-step-two.html), verify displayed information is correct (items, subtotal, tax, total price).
+2. Click the "**Finish**" button.
+
+**Expected Result:**  
+- User is navigated to the "**Checkout: Complete!**" page (/checkout-complete.html).
+- The "**Checkout: Complete!**" page clearly displays a success message, such as "**THANK YOU FOR YOUR ORDER**".
+- The page might also display additional confirmation details (e.g., order summary, order number), if applicable.
+
+**Acceptance Criteria:** AC3 ✅  
+
+---
+
+## Test Case 4: Verify User can return to product list and cart is empty after checkout completion  
+
+**Test Steps:**  
+1. On the "**Checkout: Complete!**" page (/checkout-complete.html), click the "**Back home**" button.
+2. User should be redirected to the Product List (inventory) page.
+3. Verify shopping cart is empty (cart icon shows zero items).
+
+**Expected Result:**  
+- User is redirected to the Product List page (/inventory.html).
+- Shopping cart is empty, indicating successful order completion and cart reset.
+
+**Acceptance Criteria:** AC4 ✅  
+
+---
+
+# Additional recommended tests (Optional for thoroughness):  
+- Negative path test: Verify error messages appear when mandatory fields (First Name, Last Name, Postal Code) are left blank on "Checkout: Your Information" page.
+- Verify cancel buttons throughout the checkout process return user to the correct previous pages.
+
+---
+
+## Summary of Test Coverage  
+| Test Case | Test Description                              | AC Covered |
+|-----------|-----------------------------------------------|------------|
+| TC1       | Navigate from cart to checkout information    | AC1        |
+| TC2       | Enter checkout information and continue       | AC2        |
+| TC3       | Complete checkout and verify success message  | AC3        |
+| TC4       | Return to home page and verify empty cart     | AC4        |
+
+**All acceptance criteria from provided user story are covered.**
+
+Total tokens used: 1145

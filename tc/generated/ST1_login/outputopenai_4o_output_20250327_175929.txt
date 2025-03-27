@@ -1,0 +1,40 @@
+Certainly! Let's outline the test scenarios based on the provided acceptance criteria:
+
+### Test Scenario 1: Successful Login with Correct Credentials
+
+**Precondition:**
+- User opens the main login page.
+
+**Test Data:**
+- Username: `standard_user`
+- Password: `secret_sauce`
+
+**Steps:**
+1. Enter `standard_user` in the username field.
+2. Enter `secret_sauce` in the password field.
+3. Click the login button.
+
+**Expected Result (AC1):**
+- The user is redirected to the product list page.
+
+### Test Scenario 2: Unsuccessful Login with Incorrect Password
+
+**Precondition:**
+- User opens the main login page.
+
+**Test Data:**
+- Username: `standard_user`
+- Password: `password01`
+
+**Steps:**
+1. Enter `standard_user` in the username field.
+2. Enter `password01` in the password field.
+3. Click the login button.
+
+**Expected Result (AC2):**
+- The user remains on the login page.
+- An error message is displayed: "Username and password do not match any user in this service."
+
+By performing these tests, you can verify that the login functionality behaves as expected under different conditions.
+
+Total tokens used: 383

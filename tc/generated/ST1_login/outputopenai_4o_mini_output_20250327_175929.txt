@@ -1,0 +1,64 @@
+**User Story ID:** ST_LOGIN  
+**Title:** As a user, I want to log in to the system to see the product list.
+
+---
+
+### Test Data
+- **Correct Username:** `standard_user`
+- **Correct Password:** `secret_sauce`
+- **Incorrect Password:** `password01`
+
+### Preconditions
+- User is on the main page.
+
+### Acceptance Criteria
+
+**AC1: Successful Login with Correct Credentials**
+1. **Given** the user has entered the correct login data,
+   - Correct Username: `standard_user`
+   - Correct Password: `secret_sauce`
+   
+2. **When** the user submits the login form,
+   
+3. **Then** the user should be redirected to the product list page.
+
+---
+
+**AC2: Failed Login with Incorrect Credentials**
+1. **Given** the user has entered the incorrect login data,
+   - Correct Username: `standard_user`
+   - Incorrect Password: `password01`
+   
+2. **When** the user submits the login form,
+   
+3. **Then** the user should remain on the login page.
+   
+4. **And** the user should see an error message stating, "Username and password do not match any user in this service."
+
+---
+
+### Test Scenarios
+
+#### Scenario 1: Correct Login
+- **Step 1:** Navigate to the main page.
+- **Step 2:** Input `standard_user` for the username.
+- **Step 3:** Input `secret_sauce` for the password.
+- **Step 4:** Click the login button.
+- **Expected Result:** The user is redirected to the product list page.
+
+---
+
+#### Scenario 2: Incorrect Password
+- **Step 1:** Navigate to the main page.
+- **Step 2:** Input `standard_user` for the username.
+- **Step 3:** Input `password01` for the password.
+- **Step 4:** Click the login button.
+- **Expected Result:** The user remains on the login page and sees the error message: "Username and password do not match any user in this service." 
+
+---
+
+### Additional Notes
+- Ensure that the login form is accessible and that error messages are clear and easy to understand.
+- Consider implementing security measures like account lockout after multiple failed login attempts for a more realistic scenario.
+
+Total tokens used: 603

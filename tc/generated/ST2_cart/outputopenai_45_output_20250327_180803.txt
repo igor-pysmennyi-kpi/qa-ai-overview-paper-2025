@@ -1,0 +1,38 @@
+# Test Case: Verify adding item to shopping cart from inventory page
+
+## Test Case ID:
+ST_CART_01
+
+## Title:
+Verify user can add an item directly from the inventory page to the shopping cart, and the cart updates accordingly.
+
+## Preconditions:
+- User is logged in successfully with the provided credentials (username: standard_user; password: secret_sauce).
+- User is currently on the inventory page (/inventory.html).
+- Shopping cart is empty.
+
+## Test Data:
+| Field             | Value          |
+|-------------------|----------------|
+| Username          | standard_user  |
+| Password          | secret_sauce   |
+
+## Steps and Expected Results:
+
+| Step | Action                                                                                 | Expected Result                                                                                                     | Acceptance Criteria |
+|------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|---------------------|
+| 1    | Verify that each product displayed on the inventory page has a visible "Add to cart" button. | Each product has a visible button labeled "Add to cart".                                                             | AC1                 |
+| 2    | Click the "Add to cart" button for one specific product (e.g., Sauce Labs Backpack).   | The selected product is added to the shopping cart. The "Add to cart" button for that product changes to "Remove".   | AC2                 |
+| 3    | Check the shopping cart icon (in the header navigation).                               | The cart icon displays a badge with the number "1", indicating one item added.                                       | AC2                 |
+| 4    | Click on the shopping cart icon to navigate to the cart page.                          | User is redirected to the cart page (/cart.html).                                                                    | AC3                 |
+| 5    | Verify the selected item is listed in the shopping cart.                               | The selected product (e.g., Sauce Labs Backpack) is correctly displayed in the cart with the correct quantity.       | AC3                 |
+
+## Postconditions:
+- The shopping cart contains exactly one item, matching the product selected from the inventory page.
+- The cart badge accurately reflects the total number of items in the cart.
+
+## Notes:
+- This test can be repeated with multiple products to verify the cart badge increments correctly and items are properly added.
+- Test behavior on different browsers and devices to ensure consistent user experience.
+
+Total tokens used: 664

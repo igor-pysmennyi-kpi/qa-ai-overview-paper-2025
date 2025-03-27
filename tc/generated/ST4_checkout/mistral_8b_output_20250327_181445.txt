@@ -1,0 +1,90 @@
+Certainly! Below is a detailed test plan based on the provided acceptance criteria for the checkout process.
+
+### Test Plan: ST_CHECKOUT
+
+#### Test Data:
+- **Username:** standard_user
+- **Password:** secret_sauce
+- **First Name:** Jane
+- **Last Name:** Doe
+- **Postal Code:** 12345
+
+#### Preconditions:
+1. User is logged in with the username and password.
+2. User has at least one item added to the shopping cart.
+3. User is on the shopping cart page (`/cart.html`).
+
+#### Test Steps and Acceptance Criteria:
+
+##### Test Case 1: Navigate to Checkout Page
+**Test Steps:**
+1. User is on the shopping cart page (`/cart.html`).
+2. User clicks on the "Checkout" button.
+
+**Expected Result:**
+- User is navigated to the 'Checkout: Your Information' page (`/checkout-step-one.html`).
+
+**Acceptance Criteria (AC1):**
+- Given product in cart
+- When user clicks on "Checkout" button
+- Then user is navigated to the 'Checkout: Your Information' page (`/checkout-step-one.html`).
+
+##### Test Case 2: Enter User Information and Proceed to Overview
+**Test Steps:**
+1. User is on the 'Checkout: Your Information' page (`/checkout-step-one.html`).
+2. User enters the First Name, Last Name, and Postal Code into the respective fields.
+3. User clicks on the "Continue" button.
+
+**Expected Result:**
+- User is navigated to the 'Checkout: Overview' page (`/checkout-step-two.html`).
+- The 'Checkout: Overview' page correctly displays the item(s) from the cart, Item total (subtotal), Tax, and Total price.
+
+**Acceptance Criteria (AC2):**
+- Given user input First Name, Last Name, and Postal Code into the respective fields
+- When user clicks "Continue"
+- Then user navigates to the 'Checkout: Overview' page (`/checkout-step-two.html`)
+- And the 'Checkout: Overview' page correctly displays the item(s) from the cart, Item total (subtotal), Tax, and Total price.
+
+##### Test Case 3: Complete the Checkout Process
+**Test Steps:**
+1. User is on the 'Checkout: Overview' page (`/checkout-step-two.html`).
+2. User clicks on the 'Finish' button.
+
+**Expected Result:**
+- User is navigated to the 'Checkout: Complete!' page (`/checkout-complete.html`).
+- The 'Checkout: Complete!' page displays a success message (e.g., "THANK YOU FOR YOUR ORDER").
+
+**Acceptance Criteria (AC3):**
+- When user clicks 'Finish' on the 'Checkout: Overview'
+- Then user navigates to the 'Checkout: Complete!' page (`/checkout-complete.html`)
+- And the 'Checkout: Complete!' page displays a success message (e.g., "THANK YOU FOR YOUR ORDER").
+
+##### Test Case 4: Return to Home Page
+**Test Steps:**
+1. User is on the 'Checkout: Complete!' page (`/checkout-complete.html`).
+2. User clicks on the "Back home" button.
+
+**Expected Result:**
+- User is redirected to the product list page.
+- The shopping cart is empty after successfully completing the order.
+
+**Acceptance Criteria (AC4):**
+- Given user stays on "Checkout: Complete!" page
+- When user clicks "Back home" button
+- Then user is redirected to the product list page
+- And the shopping cart is empty after successfully completing the order.
+
+### Test Execution:
+1. **Login:** Log in with the provided credentials.
+2. **Add Item to Cart:** Add at least one item to the cart.
+3. **Navigate to Cart:** Go to the cart page.
+4. **Checkout Process:** Follow the steps outlined in the test cases to complete the checkout process.
+5. **Verify Results:** Ensure that each step and acceptance criterion is met as per the expected results.
+
+### Test Results:
+- **Pass/Fail:** For each test case, document whether it passed or failed.
+- **Notes:** Any additional notes or observations during the test execution.
+
+By following this test plan, you can ensure that the checkout process is functioning correctly and meets the user's expectations.
+
+Total tokens used: 1220
