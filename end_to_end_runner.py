@@ -40,5 +40,5 @@ async def main(llm, model_name, promt):
     await browser.close()
 
 if __name__ == '__main__':
-    # asyncio.run(main(llm_4o_mini, "gpt-4o-mini", MUTANT_LOGIN_PROMT))
-    asyncio.run(main(llm_4o, "gpt-4o", LOGIN_NEGATIVE_PROMT))
+    # asyncio.run(main(llm_4o_mini, "gpt-4o-mini", SORT_PROMT))
+    asyncio.run(main(llm_4o, "gpt-4o", MUTANT_SORT_PROMT))

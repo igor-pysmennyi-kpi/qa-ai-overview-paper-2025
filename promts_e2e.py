@@ -85,3 +85,33 @@ CHECKOUT_E2E_PROMT = promt_e2e("Order_and_Checkout", """
 3.  The shopping cart icon/indicator shows that the cart is empty (e.g., no number badge).
 4.  (Optional) The cart page (`/cart.html`) displays no items.
                                """)
+
+SORT_PROMT = promt_e2e("Sort", """
+ 1.  Navigate to the [Sauce Labs Demo website](https://www.saucedemo.com/).  
+ 2.  Enter 'standard_user' into the Username field.  
+ 3.  Enter 'secret_sauce' into the Password field.  
+ 4.  Make sure Username and Password are filled in. If not, fill them in.  
+ 5.  Click the 'Login' button.
+ 6.  Wait for product list page to load
+ 4.  Click the sort dropdown.
+ 6.  Select "Price (low to high)".
+ 7.  Check if the displayed product prices are sorted from lowest to highest.
+
+ **Expected Result:**  
+ *   Price of second product is higher than the first one.
+ """)
+
+MUTANT_SORT_PROMT = promt_e2e("Mutant_Sort", """
+ 1.  Navigate to the [Sauce Labs Demo website](https://www.saucedemo.com/).  
+ 2.  Enter 'standard_user' into the Username field.  
+ 3.  Enter 'secret_sauce' into the Password field.  
+ 4.  Make sure Username and Password are filled in. If not, fill them in.  
+ 5.  Click the 'Login' button.
+ 6.  Wait for product list page to load
+ 4.  Click the sort dropdown.
+ 6.  Select "Name (A to Z)".
+ 7.  Check if the displayed product prices are sorted from lowest to highest.
+
+ **Expected Result:**  
+ *   Price of second product is higher than the first one.
+ """)
